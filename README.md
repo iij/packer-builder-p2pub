@@ -25,7 +25,7 @@ Packer builder plugin for IIJ GIO P2 Public Resource
     }],
     "provisioners": [{
         "type": "shell",
-        "inline": "touch /tmp/packer-builder-p2pub-sample"
+        "inline": "touch /var/tmp/packer-builder-p2pub-sample"
     }]
 }
 ```
@@ -49,13 +49,13 @@ After running this sample, the image is saved in [Storage Archive](https://manua
 | ```gis_service_code``` | Service Code of P2 contract to use for building and save the artifact in | ◯ |
 | ```storage_type``` | Built image's [Storage Type (System Storage)](https://manual.iij.jp/p2/pubapi/59949023.html). | ◯ |
 | ```server_type``` | [Server Type](https://manual.iij.jp/p2/pubapi/59949011.html) used while build. Default is ```VB0-1```. | |
-| ```base_image``` | | |
-| ```base_image.gis_service_code``` | | |
-| ```base_image.iar_service_code``` | | |
-| ```base_image.image_id``` | | |
+| ```base_image``` | Base image the artifact is built from. | |
+| ```base_image.gis_service_code``` | Base image's Service Code (P2 root contract) | |
+| ```base_image.iar_service_code``` | Base image's Service Code (Storage Archive) | |
+| ```base_image.image_id``` | Base image's Image ID | |
 | ```root_ssh_key``` | SSH public key for root user, used by provisioners. If it is empty, P2 PUB builder will generate temporary SSH key pair. | |
 | ```label``` | Label text for build images. | |
-| ```disable_global_address``` | If this is set true, P2 PUB builder connects VMs through [Standard Private Network](https://manual.iij.jp/p2/pub/b-5-1-1.html). Default is ```false``` (the builder allocate a global IP address and provisioning by using the Internet).| |
+| ```disable_global_address``` | If this is set true, P2 PUB builder connects to VMs through [Standard Private Network](https://manual.iij.jp/p2/pub/b-5-1-1.html). Default is ```false``` (the builder allocate a global IP address and provisioning by using the Internet).| |
 
 **Common parameters modified by P2 PUB builder**
 

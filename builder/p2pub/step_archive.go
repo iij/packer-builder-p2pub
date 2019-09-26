@@ -91,9 +91,8 @@ func (s *stepArchive) Run(ctx context.Context, state multistep.StateBag) multist
 			return multistep.ActionHalt
 		}
 
-		// FIXME:
 		for _, image := range listResp.ImageList {
-			if image.Label == config.Label {
+			if image.SrcServiceCode == serviceCode {
 				state.Put("ImageId", image.ImageId)
 				break
 			}

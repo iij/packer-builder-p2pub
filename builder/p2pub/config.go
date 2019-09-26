@@ -43,8 +43,7 @@ type Config struct {
 	// Public key ** for "root" ** (optional)
 	RootSSHKey string `mapstructure:"root_ssh_key"`
 
-	// The label set to built image
-	// This is optional parameter but P2 PUB builder may not work correctly when it is not set
+	// The label set to built image (optional)
 	Label string `mapstructure:"label"`
 
 	// If this is set true, P2 PUB builder connects VMs through Standard Private Network. (optional)
